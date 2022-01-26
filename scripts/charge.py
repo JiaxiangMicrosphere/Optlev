@@ -11,7 +11,7 @@ import scipy.signal as sp
 import scipy.optimize as opt
 import cPickle as pickle
 
-path = r"F:\data\20210616\Paul_trap_10um\2\chargeHP"
+path = r"F:\data\20220124\5um_SiO2\1\discharge"
 ts = 1.
 
 fdrive = 35. #31.

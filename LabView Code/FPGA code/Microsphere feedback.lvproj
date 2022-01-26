@@ -2107,6 +2107,7 @@
 					<Item Name="niFPGA BW CU Order 4 (16-bit).vi" Type="VI" URL="/&lt;vilib&gt;/rvi/Analysis/measure/butterworth/templates/niFPGA BW CU Order 4 (16-bit).vi"/>
 					<Item Name="niFPGA I32xI32 MAC+ MSB.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/Analysis/utilities/niFPGA I32xI32 MAC+ MSB.vi"/>
 					<Item Name="niFpgaDdsAccum.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/Analysis/siggen/SquareWave/templates/niFpgaDdsAccum.vi"/>
+					<Item Name="niLvFpgaNotchCU(16-bit).vi" Type="VI" URL="/&lt;vilib&gt;/rvi/Analysis/measure/Notch/templates/niLvFpgaNotchCU(16-bit).vi"/>
 				</Item>
 			</Item>
 			<Item Name="Build Specifications" Type="Build">
@@ -2295,7 +2296,7 @@
 			<Item Name="NiFpgaLv.dll" Type="Document" URL="NiFpgaLv.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="Microspherefeedb_FPGATarget2_(FPGA)PIDXYZlase_Y-TtBVY85Jw.lvbitx" Type="Document" URL="../FPGA Bitfiles/Microspherefeedb_FPGATarget2_(FPGA)PIDXYZlase_Y-TtBVY85Jw.lvbitx"/>
+			<Item Name="Microspherefeedb_FPGATarget2_(FPGA)PIDXYZlase_Y-TtBVY85Jw20211028_notch.lvbitx" Type="Document" URL="../FPGA Bitfiles/Microspherefeedb_FPGATarget2_(FPGA)PIDXYZlase_Y-TtBVY85Jw20211028_notch.lvbitx"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>

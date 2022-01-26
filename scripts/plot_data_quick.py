@@ -6,12 +6,12 @@ import numpy as np
 import bead_util as bu
 import glob
 
-refname = r"1mbar_zcool.h5"
+refname = r"LPmbar_xyzcool_Pz-0.6_Dz-18_Dx-5_Dy-5_0.h5"
 fname0 = r""
-path = r"F:\data\20210709\Paul_trap_10um\2\1mbar"
+path = r"F:\data\20220124\5um_SiO2\1\pump"
 realcsdnorm = False
 
-make_plot_vs_time = False
+make_plot_vs_time = True
 
 if fname0 == "":
 	filelist = glob.glob(path+"\*.h5")
@@ -30,7 +30,7 @@ if fname0 == "":
 
 Fs = 10e3  #
 # this is ignored with HDF5 files
-NFFT = 2**12
+NFFT = 2**14
 
 
 def getdata(fname):

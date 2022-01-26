@@ -29,12 +29,14 @@ NFFT = 2**18
 HV_ch = 3
 x_ch = 0
 
-folder_cal = r"F:\data\20210507\15um_150umhole\5\calibration1e, dx=-0.07"
-
-folder_sens = r"F:\data\20210507\15um_150umhole\5\meas far dx = -0.07"
-
-folder_force_template = r"F:\data\20210507\15um_150umhole\5\meas far dx = -0.07"
-
+# folder_cal = r"F:\data\20210507\15um_150umhole\5\calibration1e, dx=-0.07"
+folder_cal=r"F:\DM 2020 data\20200608\10um_SiO2\1\20200617\calibration1e_HiZ"
+# folder_sens = r"F:\data\20210507\15um_150umhole\5\meas far dx = -0.07"
+#
+folder_sens = r"F:\DM 2020 data\20200608\10um_SiO2\1\20200617\kick\0.1ms\6.4V"
+#
+# folder_force_template = r"F:\data\20210507\15um_150umhole\5\meas far dx = -0.07"
+folder_force_template = r"F:\DM 2020 data\20200608\10um_SiO2\1\20200617\kick\0.1ms\6.4V"
 electrodes_distance = 0.0033
 
 comsol_correction = 0.7
@@ -369,7 +371,7 @@ def Momentum_Impulse_file(file_meas, list_calibration, list_force_template, elec
 
 
 
-Momentum_Impulse_file(filelist_meas[5], filelist_calibration, filelist_force_template, electrodes_distance, comsol_correction)
+Momentum_Impulse_file(filelist_meas[1], filelist_calibration, filelist_force_template, electrodes_distance, comsol_correction)
 
 
 plt.show()

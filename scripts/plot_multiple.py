@@ -8,7 +8,7 @@ import glob
 
 single_channel = True
 VEOM_h5 = True
-measuring_with_xyz = False
+measuring_with_xyz =False
 
 scope = True # gets the correct FS
 
@@ -19,7 +19,7 @@ def list_file_time_order(filelist):
 
 savetxt = False
 
-path = r"F:\data\20210709\Paul_trap_10um\4\spin"
+path = r"F:\data\20220124\5um_SiO2\1\spin"
 
 file_list = glob.glob(path+"\*.h5")
 
@@ -65,6 +65,8 @@ def getdata(fname):
 	else:
 		dat = numpy.loadtxt(fname, skiprows = 5, usecols = [2] )
 
+        rms = np.sqrt(np.mean((dat[:, a]-numpy.mean(dat[:, a]))**2))
+        print('rms=%f'% rms)
         xpsd_old, freqs = matplotlib.mlab.psd(dat[:, a]-numpy.mean(dat[:, a]), Fs = Fs, NFFT = NFFT)
         # Ddrive = dat[:, bu.drive]*np.gradient(dat[:,bu.drive])
         # DdrivePSD, freqs =  matplotlib.mlab.psd(Ddrive-numpy.mean(Ddrive), Fs = Fs, NFFT = NFFT)
