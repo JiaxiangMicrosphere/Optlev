@@ -11,7 +11,7 @@ import scipy.signal as sp
 import scipy.optimize as opt
 import cPickle as pickle
 
-path = r"F:\data\20220124\5um_SiO2\1\discharge"
+path = r"F:\data\20220301\5um_SiO2\2\discharge\test"
 ts = 1.
 
 fdrive = 35. #31.
@@ -21,7 +21,7 @@ data_columns = [0, bu.xi] # column to calculate the correlation against
 drive_column = 3 # column containing drive signal
 
 def getphase(fname):
-        print "Getting phase from: ", fname 
+        print ("Getting phase from: ", fname) 
         dat, attribs, cf = bu.getdata(os.path.join(path, fname))
         fsamp = attribs["Fsamp"]
         xdat = dat[:,data_columns[1]]
@@ -33,13 +33,13 @@ def getphase(fname):
 
         cf.close()
 
-        print maxv
+        print (maxv)
         return maxv
 
 
 def getdata(fname, maxv):
 
-	print "Processing ", fname
+        print ("Processing ", fname)
         dat, attribs, cf = bu.getdata(os.path.join(path, fname))
 
         if( len(attribs) > 0 ):
@@ -93,7 +93,7 @@ while( True ):
     cfile = get_most_recent_file( path )
     
     ## wait a sufficient amount of time to ensure the file is closed
-    print cfile
+    print (cfile)
     time.sleep(ts)
 
     if( cfile == last_file ): 
@@ -117,4 +117,4 @@ while( True ):
         plt.plot(np.array(corr_data))
         plt.grid()
         plt.draw()
-        plt.pause(0.001)
+        plt.pause(0.01)

@@ -68,7 +68,7 @@ def gain_fac( val ):
     if val in volt_div_vals:
         return volt_div_vals[val]
     else:
-        print "Warning, could not find volt_div value"
+        print ("Warning, could not find volt_div value")
         return 1.
     
 
@@ -99,10 +99,10 @@ def getdata(fname):
             ## and warn the user if not
             offset_frac = 0.#offset_frac = np.abs(np.sqrt(2)*np.std( dat[:,-1] )/(200.0 * attribs['drive_amplitude'] )-1.0)
             if( curr_gain != 1.0 and offset_frac > 0.1):
-                print "Warning, voltage_div setting doesn't appear to match the expected gain for ", fname
+                print ("Warning, voltage_div setting doesn't appear to match the expected gain for ", fname)
 
         except (KeyError, IOError):
-            print "Warning, got no keys for: ", fname
+            print ("Warning, got no keys for: ", fname)
             dat = []
             attribs = {}
             f = []
@@ -173,9 +173,9 @@ def get_calibration(refname, fit_freqs, make_plot=False,
     #bp = spars
     #bcov = 0.
 
-    print bp
+    print (bp)
 
-    print attribs["temps"][0]+273
+    print (attribs["temps"][0]+273)
     norm_rat = (2*kb*(attribs["temps"][0]+273)/(bead_mass)) * 1/bp[0]
 
     if(make_plot):
@@ -226,9 +226,9 @@ def fit_spec(refname, fit_freqs, make_plot=False,
     #bp = spars
     #bcov = 0.
 
-    print bp
+    print (bp)
 
-    print attribs["temps"][0]+273
+    print (attribs["temps"][0]+273)
     norm_rat = (2*kb*(attribs["temps"][0]+273)/(bead_mass)) * 1/bp[0]
 
     if(make_plot):

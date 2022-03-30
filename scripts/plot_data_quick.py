@@ -6,25 +6,25 @@ import numpy as np
 import bead_util as bu
 import glob
 
-refname = r"LPmbar_xyzcool_Pz-0.6_Dz-18_Dx-5_Dy-5_0.h5"
+refname = r"LPmbar_xyzcool_0.h5"
 fname0 = r""
-path = r"F:\data\20220124\5um_SiO2\1\pump"
+path = r"F:\data\20220224\5um_SiO2\3\pump"
 realcsdnorm = False
 
 make_plot_vs_time = True
 
 if fname0 == "":
-	filelist = glob.glob(path+"\*.h5")
+    filelist = glob.glob(path+"\*.h5")
 
-	mtime = 0
-	mrf = ""
-	for fin in filelist:
-		f = os.path.join(path, fin) 
-		if os.path.getmtime(f)>mtime:
-			mrf = f
-			mtime = os.path.getmtime(f) 
+    mtime = 0
+    mrf = ""
+    for fin in filelist:
+	    f = os.path.join(path, fin) 
+	    if os.path.getmtime(f)>mtime:
+		    mrf = f
+		    mtime = os.path.getmtime(f) 
  
-	fname0 = mrf		
+    fname0 = mrf		
 
 
 
@@ -34,47 +34,43 @@ NFFT = 2**14
 
 
 def getdata(fname):
-	print "Opening file: ", fname
-	## guess at file type from extension
-	_, fext = os.path.splitext( fname )
-	if( fext == ".h5"):
-		f = h5py.File(fname,'r')
-		dset = f['beads/data/pos_data']
-		dat = numpy.transpose(dset)
+    print ("Opening file: ", fname)
+    ## guess at file type from extension
+    _, fext = os.path.splitext( fname )
+    if( fext == ".h5"):
+        f = h5py.File(fname,'r')
+        dset = f['beads/data/pos_data']
+        dat = numpy.transpose(dset)
 		#max_volt = dset.attrs['max_volt']
 		#nbit = dset.attrs['nbit']
-		Fs = dset.attrs['Fsamp']
-                pid = dset.attrs['PID']
-		
+        Fs = dset.attrs['Fsamp']
+        pid = dset.attrs['PID']		
 		#dat = 1.0*dat*max_volt/nbit
-                dat = dat * 10./(2**15 - 1)
-                Press = dset.attrs['pressures'][0]
-                print Press
-                
-	else:
-		dat = numpy.loadtxt(fname, skiprows = 5, usecols = [2, 3, 4, 5, 6] )
+        dat = dat * 10./(2**15 - 1)
+        Press = dset.attrs['pressures'][0]
+        print (Press)
+    else:
+	    dat = numpy.loadtxt(fname, skiprows = 5, usecols = [2, 3, 4, 5, 6])
+    xpsd, freqs = matplotlib.mlab.psd(dat[:, bu.xi]-numpy.mean(dat[:, bu.xi]), Fs = Fs, NFFT = NFFT) 
+    ypsd, freqs = matplotlib.mlab.psd(dat[:, bu.yi]-numpy.mean(dat[:, bu.yi]), Fs = Fs, NFFT = NFFT)
+    zpsd, freqs = matplotlib.mlab.psd(dat[:, bu.zi]-numpy.mean(dat[:, bu.zi]), Fs = Fs, NFFT = NFFT)
 
-	xpsd, freqs = matplotlib.mlab.psd(dat[:, bu.xi]-numpy.mean(dat[:, bu.xi]), Fs = Fs, NFFT = NFFT) 
-	ypsd, freqs = matplotlib.mlab.psd(dat[:, bu.yi]-numpy.mean(dat[:, bu.yi]), Fs = Fs, NFFT = NFFT)
-        zpsd, freqs = matplotlib.mlab.psd(dat[:, bu.zi]-numpy.mean(dat[:, bu.zi]), Fs = Fs, NFFT = NFFT)
+    xpsd_outloop, freqs = matplotlib.mlab.psd(dat[:, 4]-numpy.mean(dat[:, 4]), Fs = Fs, NFFT = NFFT)
+    # Ddrive = dat[:, bu.drive]*np.gradient(dat[:,bu.drive])
+    # DdrivePSD, freqs =  matplotlib.mlab.psd(Ddrive-numpy.mean(Ddrive), Fs = Fs, NFFT = NFFT))
+    print (pid)
 
-        xpsd_outloop, freqs = matplotlib.mlab.psd(dat[:, 4]-numpy.mean(dat[:, 4]), Fs = Fs, NFFT = NFFT)
-        # Ddrive = dat[:, bu.drive]*np.gradient(dat[:,bu.drive])
-        # DdrivePSD, freqs =  matplotlib.mlab.psd(Ddrive-numpy.mean(Ddrive), Fs = Fs, NFFT = NFFT))
-        print pid
-
-        # f, Pxy = sp.csd(dat[:, 0]-numpy.mean(dat[:, 0]), dat[:, 4] - numpy.mean(dat[:, 4]), Fs, nperseg=NFFT)
-        # plt.figure()
-        # plt.loglog(f, np.sqrt(np.abs(np.real(Pxy))))
+    # f, Pxy = sp.csd(dat[:, 0]-numpy.mean(dat[:, 0]), dat[:, 4] - numpy.mean(dat[:, 4]), Fs, nperseg=NFFT)
+    # plt.figure()
+    # plt.loglog(f, np.sqrt(np.abs(np.real(Pxy))))
 	# norm = numpy.median(dat[:, bu.zi])
-        if realcsdnorm:
-                f, Pxy = np.abs(np.real(sp.csd(dat[:, 0]-numpy.mean(dat[:, 0]), dat[:, 4] - numpy.mean(dat[:, 4]), Fs, nperseg=NFFT, scaling = "spectrum")))
-                f, Pxx = sp.csd(dat[:, 0]-numpy.mean(dat[:, 0]), dat[:, 0]-numpy.mean(dat[:, 0]), Fs, nperseg=NFFT, scaling = "spectrum")
-                f, Pyy = sp.csd(dat[:, 5]-numpy.mean(dat[:, 5]), dat[:, 5]-numpy.mean(dat[:, 5]), Fs, nperseg=NFFT, scaling = "spectrum")
-                Cxy = (Pxy**2)/(Pxx*Pyy)
-        
-	        return [freqs, xpsd, ypsd, dat, zpsd, xpsd_outloop, f, Cxy]
-        return [freqs, xpsd, ypsd, dat, zpsd, xpsd_outloop]
+    if realcsdnorm:
+        f, Pxy = np.abs(np.real(sp.csd(dat[:, 0]-numpy.mean(dat[:, 0]), dat[:, 4] - numpy.mean(dat[:, 4]), Fs, nperseg=NFFT, scaling = "spectrum")))
+        f, Pxx = sp.csd(dat[:, 0]-numpy.mean(dat[:, 0]), dat[:, 0]-numpy.mean(dat[:, 0]), Fs, nperseg=NFFT, scaling = "spectrum")
+        f, Pyy = sp.csd(dat[:, 5]-numpy.mean(dat[:, 5]), dat[:, 5]-numpy.mean(dat[:, 5]), Fs, nperseg=NFFT, scaling = "spectrum")
+        Cxy = (Pxy**2)/(Pxx*Pyy)
+        return [freqs, xpsd, ypsd, dat, zpsd, xpsd_outloop, f, Cxy]
+    return [freqs, xpsd, ypsd, dat, zpsd, xpsd_outloop]
 
 
 data0 = getdata(os.path.join(path, fname0))
@@ -151,8 +147,8 @@ if refname and realcsdnorm:
         plt.grid()
         plt.ylim(0., 1.01)
         plt.xlim(1, 120)
-        print np.sqrt(np.mean(data1[7][a:b]))# this is 0.7 for uncorrelated signals and using max NFFT
-        print np.sqrt(np.mean(data0[7][a:b]))
+        print (np.sqrt(np.mean(data1[7][a:b])))# this is 0.7 for uncorrelated signals and using max NFFT
+        print (np.sqrt(np.mean(data0[7][a:b])))
 
 plt.show()
 
