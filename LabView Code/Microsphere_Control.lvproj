@@ -27,11 +27,13 @@
 		<Item Name="bead_dropper.vi" Type="VI" URL="../bead_dropper.vi"/>
 		<Item Name="boolean_run_tilt_stage.vi" Type="VI" URL="../DAQ/boolean_run_tilt_stage.vi"/>
 		<Item Name="change_voltages_in_process_list.vi" Type="VI" URL="../DAQ/change_voltages_in_process_list.vi"/>
+		<Item Name="Charge_meas.vi" Type="VI" URL="../Charge_meas.vi"/>
 		<Item Name="DAQ.vi" Type="VI" URL="../DAQ/DAQ.vi"/>
 		<Item Name="DeviceOpen.vi" Type="VI" URL="../Examples/Tilt Stage/Device VIs/DeviceOpen.vi"/>
 		<Item Name="dipole_voltage_control(Sub VI).vi" Type="VI" URL="../DAQ/dipole_voltage_control(Sub VI).vi"/>
 		<Item Name="dipole_voltage_control_logic(SubVI).vi" Type="VI" URL="../DAQ/dipole_voltage_control_logic(SubVI).vi"/>
 		<Item Name="EOM.vi" Type="VI" URL="../FPGA code/FPGA Bitfiles/EOM.vi"/>
+		<Item Name="flow_control.vi" Type="VI" URL="../DAQ/flow_control.vi"/>
 		<Item Name="Gwinstek_chan_1_2.vi" Type="VI" URL="../Gwinstek_chan_1_2.vi"/>
 		<Item Name="Gwinstek_chan_1_2_sub.vi" Type="VI" URL="../Gwinstek_chan_1_2_sub.vi"/>
 		<Item Name="initialize_oscilloscope_chan1.vi" Type="VI" URL="../initialize_oscilloscope_chan1.vi"/>
@@ -41,10 +43,13 @@
 		<Item Name="Move Tilt Stage.vi" Type="VI" URL="../Move Tilt Stage.vi"/>
 		<Item Name="move_tilt_stage_usb.vi" Type="VI" URL="../../../../move_tilt_stage_usb.vi"/>
 		<Item Name="name_dipole_voltage.vi" Type="VI" URL="../DAQ/name_dipole_voltage.vi"/>
+		<Item Name="Paul_trap_scan.vi" Type="VI" URL="../Paul_trap_scan.vi"/>
 		<Item Name="Powermeter.vi" Type="VI" URL="../../Powermeter.vi"/>
 		<Item Name="Powermeter_eom.vi" Type="VI" URL="../../Powermeter_eom.vi"/>
 		<Item Name="pressures.vi" Type="VI" URL="../pressures.vi"/>
+		<Item Name="pressures_simu.vi" Type="VI" URL="../pressures_simu.vi"/>
 		<Item Name="pressures_sub.vi" Type="VI" URL="../pressures_sub.vi"/>
+		<Item Name="Read_flow.vi" Type="VI" URL="/&lt;instrlib&gt;/AFG-2225/Public/Action-Status/Low Level/Read_flow.vi"/>
 		<Item Name="rotation_mount.vi" Type="VI" URL="../rotation_mount.vi"/>
 		<Item Name="set_dipole_voltage.vi" Type="VI" URL="../DAQ/set_dipole_voltage.vi"/>
 		<Item Name="set_instruments (SubVI).vi" Type="VI" URL="../DAQ/set_instruments (SubVI).vi"/>
@@ -423,6 +428,8 @@
 				<Item Name="ex_CreateXArray.vi" Type="VI" URL="/&lt;vilib&gt;/express/express output/ExFileWriteBlock.llb/ex_CreateXArray.vi"/>
 				<Item Name="ex_DoesFileExist.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ExFile.llb/ex_DoesFileExist.vi"/>
 				<Item Name="ex_EscUnprintChars.vi" Type="VI" URL="/&lt;vilib&gt;/express/express output/ExFileWriteBlock.llb/ex_EscUnprintChars.vi"/>
+				<Item Name="ex_ExcelAdvancedConfig.ctl" Type="VI" URL="/&lt;vilib&gt;/express/express output/ExFileWriteBlock.llb/ex_ExcelAdvancedConfig.ctl"/>
+				<Item Name="ex_ExcelAllConfig.ctl" Type="VI" URL="/&lt;vilib&gt;/express/express output/ExFileWriteBlock.llb/ex_ExcelAllConfig.ctl"/>
 				<Item Name="ex_ExpandPathIfRelative.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ExFile.llb/ex_ExpandPathIfRelative.vi"/>
 				<Item Name="ex_FileDialog.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ExFile.llb/ex_FileDialog.vi"/>
 				<Item Name="ex_FileFormats.ctl" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ExFile.llb/ex_FileFormats.ctl"/>
@@ -451,6 +458,7 @@
 				<Item Name="ex_GetPacketData.vi" Type="VI" URL="/&lt;vilib&gt;/express/express input/ExFileReadBlock.llb/ex_GetPacketData.vi"/>
 				<Item Name="ex_GetPacketHeader.vi" Type="VI" URL="/&lt;vilib&gt;/express/express input/ExFileReadBlock.llb/ex_GetPacketHeader.vi"/>
 				<Item Name="ex_GetSystemDecimalSeparator.vi" Type="VI" URL="/&lt;vilib&gt;/express/express output/ExFileWriteBlock.llb/ex_GetSystemDecimalSeparator.vi"/>
+				<Item Name="ex_getWaveformName.vi" Type="VI" URL="/&lt;vilib&gt;/express/express output/ExFileWriteBlock.llb/ex_getWaveformName.vi"/>
 				<Item Name="ex_HeaderToSprdsheetStr.vi" Type="VI" URL="/&lt;vilib&gt;/express/express output/ExFileWriteBlock.llb/ex_HeaderToSprdsheetStr.vi"/>
 				<Item Name="ex_IncrementFilename.vi" Type="VI" URL="/&lt;vilib&gt;/express/express output/ExFileWriteBlock.llb/ex_IncrementFilename.vi"/>
 				<Item Name="ex_InterleaveColHdngs.vi" Type="VI" URL="/&lt;vilib&gt;/express/express output/ExFileWriteBlock.llb/ex_InterleaveColHdngs.vi"/>
@@ -481,6 +489,7 @@
 				<Item Name="ex_RemoveLastChars.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ExFile.llb/ex_RemoveLastChars.vi"/>
 				<Item Name="ex_RemoveSpecialFromChunk.vi" Type="VI" URL="/&lt;vilib&gt;/express/express input/ExFileReadBlock.llb/ex_RemoveSpecialFromChunk.vi"/>
 				<Item Name="ex_resolveStaticPath.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ExFile.llb/ex_resolveStaticPath.vi"/>
+				<Item Name="ex_SaveExcelFileCheckName.vi" Type="VI" URL="/&lt;vilib&gt;/express/express output/ExFileWriteBlock.llb/ex_SaveExcelFileCheckName.vi"/>
 				<Item Name="ex_SaveFileCheckName.vi" Type="VI" URL="/&lt;vilib&gt;/express/express output/ExFileWriteBlock.llb/ex_SaveFileCheckName.vi"/>
 				<Item Name="ex_SaveFileCheckNameTDM.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/express/TDMExpress.llb/ex_SaveFileCheckNameTDM.vi"/>
 				<Item Name="ex_SaveFileCheckNameTDMS.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ex_TDMS/ex_SaveFileCheckNameTDMS.vi"/>
@@ -493,6 +502,7 @@
 				<Item Name="ex_SoftwareRevision.ctl" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ExFile.llb/ex_SoftwareRevision.ctl"/>
 				<Item Name="ex_sortOutManualAndAutoFillProperties.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/express/ex_EditUserDefinedProperties/ex_sortOutManualAndAutoFillProperties.vi"/>
 				<Item Name="ex_SplitPacketDataRow.vi" Type="VI" URL="/&lt;vilib&gt;/express/express input/ExFileReadBlock.llb/ex_SplitPacketDataRow.vi"/>
+				<Item Name="ex_subExcelFileWrite.vi" Type="VI" URL="/&lt;vilib&gt;/express/express output/ExFileWriteBlock.llb/ex_subExcelFileWrite.vi"/>
 				<Item Name="ex_subFileRead.vi" Type="VI" URL="/&lt;vilib&gt;/express/express input/ExFileReadBlock.llb/ex_subFileRead.vi"/>
 				<Item Name="ex_subFileWrite.vi" Type="VI" URL="/&lt;vilib&gt;/express/express output/ExFileWriteBlock.llb/ex_subFileWrite.vi"/>
 				<Item Name="ex_TdmData.ctl" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ExFile.llb/ex_TdmData.ctl"/>
@@ -508,6 +518,7 @@
 				<Item Name="ex_WriteDataAll.vi" Type="VI" URL="/&lt;vilib&gt;/express/express output/ExFileWriteBlock.llb/ex_WriteDataAll.vi"/>
 				<Item Name="ex_WriteDataTDM.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/express/TDMExpress.llb/ex_WriteDataTDM.vi"/>
 				<Item Name="ex_WriteDataTDMS.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ex_TDMS/ex_WriteDataTDMS.vi"/>
+				<Item Name="ex_WriteExcelData.vi" Type="VI" URL="/&lt;vilib&gt;/express/express output/ExFileWriteBlock.llb/ex_WriteExcelData.vi"/>
 				<Item Name="ex_WriteFileParams.ctl" Type="VI" URL="/&lt;vilib&gt;/express/express output/ExFileWriteBlock.llb/ex_WriteFileParams.ctl"/>
 				<Item Name="ex_WriteToOpenTDMFile.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/express/TDMExpress.llb/ex_WriteToOpenTDMFile.vi"/>
 				<Item Name="ex_XColumnsText.vi" Type="VI" URL="/&lt;vilib&gt;/express/express output/ExFileWriteBlock.llb/ex_XColumnsText.vi"/>
@@ -548,9 +559,9 @@
 				<Item Name="LVBoundsTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVBoundsTypeDef.ctl"/>
 				<Item Name="LVDateTimeRec.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVDateTimeRec.ctl"/>
 				<Item Name="LVRectTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVRectTypeDef.ctl"/>
-				<Item Name="Merge Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Merge Errors.vi"/>
 				<Item Name="NI_AALBase.lvlib" Type="Library" URL="/&lt;vilib&gt;/Analysis/NI_AALBase.lvlib"/>
 				<Item Name="NI_AALPro.lvlib" Type="Library" URL="/&lt;vilib&gt;/Analysis/NI_AALPro.lvlib"/>
+				<Item Name="NI_ExcelFile.lvlib" Type="Library" URL="/&lt;vilib&gt;/express/express shared/NI_ExcelFile/NI_ExcelFile.lvlib"/>
 				<Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/lvfile.llb/NI_FileType.lvlib"/>
 				<Item Name="NI_MABase.lvlib" Type="Library" URL="/&lt;vilib&gt;/measure/NI_MABase.lvlib"/>
 				<Item Name="NI_MAPro.lvlib" Type="Library" URL="/&lt;vilib&gt;/measure/NI_MAPro.lvlib"/>
@@ -655,7 +666,7 @@
 			</Item>
 			<Item Name="make_synth_array (SubVI).vi" Type="VI" URL="../DAQ/make_synth_array (SubVI).vi"/>
 			<Item Name="make_tilt_stage_array (SubVI).vi" Type="VI" URL="../DAQ/make_tilt_stage_array (SubVI).vi"/>
-			<Item Name="Microspherefeedb_FPGATarget2_(FPGA)PIDXYZlase_Y-TtBVY85Jw.lvbitx" Type="Document" URL="../FPGA code/FPGA Bitfiles/Microspherefeedb_FPGATarget2_(FPGA)PIDXYZlase_Y-TtBVY85Jw.lvbitx"/>
+			<Item Name="Microspherefeedb_FPGATarget2_(FPGA)PIDXYZ_reset_voltage.lvbitx" Type="Document" URL="../FPGA code/FPGA Bitfiles/Microspherefeedb_FPGATarget2_(FPGA)PIDXYZ_reset_voltage.lvbitx"/>
 			<Item Name="Microspherefeedb_FPGATarget_MyCompilation_PIDXYZ_eom.lvbitx" Type="Document" URL="../FPGA code/FPGA Bitfiles/Microspherefeedb_FPGATarget_MyCompilation_PIDXYZ_eom.lvbitx"/>
 			<Item Name="move_tilt_stage_simpler(Sub VI).vi" Type="VI" URL="../move_tilt_stage_simpler(Sub VI).vi"/>
 			<Item Name="NiFpgaLv.dll" Type="Document" URL="NiFpgaLv.dll">
