@@ -30,6 +30,7 @@
 		<Item Name="Charge_meas.vi" Type="VI" URL="../Charge_meas.vi"/>
 		<Item Name="clean_up_data_tasks (SubVI).vi" Type="VI" URL="../DAQ/clean_up_data_tasks (SubVI).vi"/>
 		<Item Name="DAQ.vi" Type="VI" URL="../DAQ/DAQ.vi"/>
+		<Item Name="DAQ_v1.vi" Type="VI" URL="../DAQ/DAQ_v1.vi"/>
 		<Item Name="DeviceOpen.vi" Type="VI" URL="../Examples/Tilt Stage/Device VIs/DeviceOpen.vi"/>
 		<Item Name="digital output.vi" Type="VI" URL="../DAQ/digital output.vi"/>
 		<Item Name="digital_stop.vi" Type="VI" URL="../DAQ/digital_stop.vi"/>

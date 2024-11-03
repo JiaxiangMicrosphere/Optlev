@@ -2115,6 +2115,9 @@
 					<Item Name="niFpgaDdsAccum.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/Analysis/siggen/SquareWave/templates/niFpgaDdsAccum.vi"/>
 					<Item Name="niLvFpgaNotchCU(16-bit).vi" Type="VI" URL="/&lt;vilib&gt;/rvi/Analysis/measure/notch/templates/niLvFpgaNotchCU(16-bit).vi"/>
 				</Item>
+				<Item Name="BeadCoolerFixedZ(SubVI).vi" Type="VI" URL="../MultiChannelFeedbackCooling FPGA/BeadCoolerFixedZ(SubVI).vi"/>
+				<Item Name="rangelimiter.vi" Type="VI" URL="../MultiChannelFeedbackCooling FPGA/rangelimiter.vi"/>
+				<Item Name="BeadCoolerFixedZ(SubVI)_noint_extraHP.vi" Type="VI" URL="../MultiChannelFeedbackCooling FPGA/BeadCoolerFixedZ(SubVI)_noint_extraHP.vi"/>
 			</Item>
 			<Item Name="Build Specifications" Type="Build">
 				<Item Name="MultiChannelfFeedbackCooling (FPGA)_PIDXYZ_laserPID" Type="{F4C5E96F-7410-48A5-BB87-3559BC9B167F}">
